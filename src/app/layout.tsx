@@ -11,14 +11,17 @@ const leagueSpartan = League_Spartan({
 });
 
 export const metadata: Metadata = {
-  title: "StockFlow",
+  title: "Stock Flow",
   description: "Landing page for StockFlow enterprise",
+  icons: {
+    icon: '/stockflow-high-resolution-logo-grayscale-transparent.ico', // root-relative path!
+  },
 };
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children:React.ReactNode;
 }) {
   return (
     <html lang="en">

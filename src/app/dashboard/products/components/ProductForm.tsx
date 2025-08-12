@@ -51,30 +51,31 @@ export function ProductForm({
   onSave,
   isSubmitting,
 }: ProductFormProps) {
-  const form = useForm<ProductFormValues>({
-    resolver: zodResolver(productSchema),
-    defaultValues: {
-      name: '',
-      sku: '',
-      price: 0,
-      regularPrice: undefined,
-      salePrice: undefined,
-      type: 'simple',
-      status: 'publish',
-      stockQuantity: 0,
-      stockStatus: 'instock',
-      manageStock: false,
-      weight: undefined,
-      dimensions: { length: undefined, width: undefined, height: undefined },
-      categories: [],
-      tags: [],
-      images: [],
-      attributes: {},
-      variations: [],
-      purchaseNote: '',
-      soldIndividually: false,
-    },
-  })
+const form = useForm<ProductFormValues>({
+  resolver: zodResolver(productSchema),
+  defaultValues: {
+    name: "",
+    sku: "",
+    price: 0,
+    regularPrice: undefined,
+    salePrice: undefined,
+    type: "simple",
+    status: "publish",
+    stockQuantity: 0,
+    stockStatus: "instock",
+    manageStock: false,
+    weight: undefined,
+    dimensions: { length: undefined, width: undefined, height: undefined },
+    categories: [],
+    tags: [],
+    images: [],
+    attributes: {},
+    variations: [],
+    purchaseNote: undefined,
+    soldIndividually: false,
+  },
+});
+
 
   useEffect(() => {
     if (isOpen && currentProduct) {
@@ -83,11 +84,18 @@ export function ProductForm({
         regularPrice: currentProduct.regularPrice || undefined,
         salePrice: currentProduct.salePrice || undefined,
         weight: currentProduct.weight || undefined,
-        dimensions: {
-          length: currentProduct.dimensions?.length ?? undefined,
-          width: currentProduct.dimensions?.width ?? undefined,
-          height: currentProduct.dimensions?.height ?? undefined,
-        },
+      dimensions: {
+  length: currentProduct.dimensions?.length !== undefined
+    ? String(currentProduct.dimensions.length)
+    : undefined,
+  width: currentProduct.dimensions?.width !== undefined
+    ? String(currentProduct.dimensions.width)
+    : undefined,
+  height: currentProduct.dimensions?.height !== undefined
+    ? String(currentProduct.dimensions.height)
+    : undefined,
+},
+
         purchaseNote: currentProduct.purchaseNote || '',
       })
     } else if (!isOpen) {

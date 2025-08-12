@@ -1,6 +1,6 @@
 'use client';
 import { ThemeProvider } from "../components/themeProvider";
-import { DashboardSidebar } from "../components/SidebarDashboard";
+
 import { DashboardHeader } from "../components/HeaderDashboard";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";

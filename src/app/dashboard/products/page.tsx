@@ -14,7 +14,7 @@ import { Skeleton } from '@/components/ui/skeleton'
 import { ProductStats, WooCommerceActions, ProductForm } from './components'
 import { FeaturedProducts } from '../products/components/ProductFeaturesComponents'
 import { Product, ProductStats as Stats } from './types'
-import env from './config';
+
 
 const FloatingBubbles = () => {
   // Pre-calculate bubble positions and sizes for better performance
@@ -518,6 +518,7 @@ export default function ProductManagement() {
                     animate={{ 
                       rotate: 360,
                       transition: { 
+                        type: "spring" as const,
                         duration: 10,
                         repeat: Infinity,
                         ease: "linear"

@@ -113,11 +113,11 @@ export default function Hero2() {
       opacity: 1,
       rotate: 0,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 300,
         damping: 25,
-        opacity: { duration: 0.4 },
-      },
+        duration:0.3,
+        },
     },
     exit: (direction: string) => ({
       x: direction === "right" ? "-100%" : "100%",

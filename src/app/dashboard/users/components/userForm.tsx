@@ -116,7 +116,7 @@ const FormFields = ({ form }: { form: any }) => (
       rules={[{ required: true, message: 'Please select role!' }]}
     >
       {/* Controlled by Form automatically */}
-      <Select onValueChange={(value: string) => form.setFieldsValue({ role: value })} placeholder="Select role" >
+      <Select onValueChange={(value: string) => form.setFieldsValue({ role: value })}>
         <SelectTrigger className="bg-gray-900 border border-gray-700 text-white hover:border-yellow-400 focus:ring-2 focus:ring-yellow-400 transition">
           <SelectValue placeholder="Select role" />
         </SelectTrigger>

@@ -60,16 +60,20 @@ export function DashboardHeader() {
   }, []);
 
   useEffect(() => {
+    async function fetchUserData() {
     try {
-      const cookieData = getCookie("userData");
+      const cookieData = await getCookie("userData");
       if (cookieData) {
-        const parsedData: UserData = JSON.parse(decodeURIComponent(cookieData));
+        const parsedData: UserData = JSON.parse(decodeURIComponent(cookieData as string));
         setUserData(parsedData);
       }
     } catch (error) {
-      console.error("Error parsing user data:", error);
+      console.error(error);
     }
-  }, []);
+  }
+  fetchUserData();
+}, []);
+
 
   const handleSync = async () => {
     try {

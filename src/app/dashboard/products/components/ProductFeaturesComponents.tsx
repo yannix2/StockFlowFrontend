@@ -3,12 +3,12 @@
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Package } from 'lucide-react'
-import { Product } from './types'
+import { Product } from '../types'
 
 export function FeaturedProducts({ products }: { products: Product[] }) {
   const recentProducts = [...products]
     .sort((a, b) => 
-      new Date(b.dateCreated || 0).getTime() - new Date(a.dateCreated || 0).getTime()
+      new Date(b.createdAt || 0).getTime() - new Date(a.createdAt || 0).getTime()
     )
     .slice(0, 5)
 
@@ -47,7 +47,7 @@ export function FeaturedProducts({ products }: { products: Product[] }) {
                   <p className="text-sm text-gray-400">${product.price.toFixed(2)}</p>
                 </div>
                 <Badge variant="outline" className="text-xs">
-                  {new Date(product.dateCreated || '').toLocaleDateString()}
+                  {new Date(product.createdAt || '').toLocaleDateString()}
                 </Badge>
               </div>
             ))}
