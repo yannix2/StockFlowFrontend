@@ -1,9 +1,8 @@
 'use client';
 import { motion } from 'framer-motion';
 import ContactForm from '@/app/components/ContactForm';
-import { Mail, Phone, MapPin, Clock, ArrowRight, ChevronRight } from 'lucide-react';
+import { Phone, MapPin, Clock, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
-import { BarChart2 } from 'lucide-react';
 import logo from '../../shared/stockflow-high-resolution-logo-grayscale-transparent.png';
 import Image from 'next/image';
 export default function ContactPage() {
