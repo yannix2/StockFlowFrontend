@@ -8,7 +8,7 @@ import StockFlowInfoSection from "./components/whatisStockflow";
 import OfferSection from "./components/offerSection";
 import TestimonialSection from "./components/testimonialsSection";
 import TestimonialsCarousel from "./components/testimonialsFeedback";
-import ContactForm from "@/app/components/ContactForm";
+import ContactForm from "./components/ContactForm";
 export default function Home() {
   return (
     <main className=" bg-white text-black">
