@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
-import ContactForm from '../components/ContactForm';
+import ContactForm from '@/app/components/ContactForm';
 import { Mail, Phone, MapPin, Clock, ArrowRight, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { BarChart2 } from 'lucide-react';
